@@ -1,0 +1,538 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #fefefe;
+  color: #222;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #0c4a6e;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+}
+
+/* Navigation */
+nav {
+  background-color: #1e293b;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f1f5f9;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #38bdf8;
+}
+
+/* Intro Section */
+.intro {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #334155;
+  background-color: #f8fafc;
+}
+
+/* Search */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  gap: 0.5rem;
+}
+
+.search input {
+  padding: 0.5rem;
+  width: 200px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+
+.search button {
+  padding: 0.5rem 1rem;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #0284c7;
+}
+
+/* Featured Proverbs */
+.featured-proverbs {
+  background-color: #f1f5f9;
+  padding: 2rem 1rem;
+}
+
+.featured-proverbs h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.proverb-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* کارت‌ها در وسط افقی */
+  gap: 1.5rem;
+  max-width: 700px; /* عرض کل بخش کارت‌ها محدود شده */
+  margin: 0 auto; /* برای وسط‌چین کردن کل بخش */
+}
+
+.proverb-card {
+  background-color: #fff;
+  padding: 1rem;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.proverb-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.proverb-card p.original {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.proverb-card p.translation {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: #475569;
+}
+
+.proverb-card .meaning {
+  font-size: 0.95rem;
+  color: #334155;
+  font-weight: bold;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.proverb-card:hover .meaning {
+  opacity: 1;
+  max-height: 100px; 
+}
+
+/* Footer */
+footer {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.footer-content p,
+.footer-content a {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 2rem;
+  background-color: #fdfdfd;
+}
+article.intro{
+    padding: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #334155;
+  background-color: #f8fafc;
+}
+
+.gallery h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #224870;
+  margin-bottom: 1.5rem;
+}
+
+.proverb--grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr); 
+  gap:20px;
+  justify-items: center;
+  padding: 0 1rem;
+  padding-right: 5%;
+  padding-left: 3%;
+  margin: auto;
+  max-width: 1000px;
+}
+
+/* Gallery Item */
+.proverb-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.proverb-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.proverb-card img {
+  width: 100%;
+  height: 200px; /* اندازه ثابت برای همه عکس‌ها */
+  object-fit: cover; /* برای حفظ نسبت درست بدون کشیدگی */
+  display: block;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.proverb-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Proverb Info */
+.proverb-card p {
+  padding: 1rem;
+  text-align: center;
+}
+
+.proverb-card .original {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.proverb-card .pashto {
+  font-size: 1rem;
+  color: #666;
+}
+
+.proverb-card .english {
+  font-size: 1rem;
+  color: #999;
+}
+
+/* Details Button */
+.details-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  text-decoration: none;
+  color: #1e3550;
+  border: 1px solid #1e3550;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.details-link:hover {
+  background-color: #1e3550;
+  color: white;
+  transform: scale(1.05);
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #fefefe;
+  color: #222;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #0c4a6e;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+}
+
+/* Proverb Detail Section */
+.proverb-detail {
+  background-color: #f8fafc;
+  padding: 2rem;
+}
+
+.proverb-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2%;
+  border-radius: 8px;
+  box-shadow: 0 8px 12px rgba(1, 17, 105, 0.1);
+}
+
+.proverb h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.proverb p {
+  font-size: 1.1rem;
+  color: #334155;
+}
+
+.proverb-meaning h4 {
+  font-size: 1.5rem;
+  color: #0f172a;
+}
+
+.proverb-meaning p {
+  font-size: 1rem;
+  color: #475569;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #0ea5e9;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #0284c7;
+}
+
+/* Footer */
+footer {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+/* Details Page Styling */
+
+.details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.details-container .proverb {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1.5rem;
+}
+
+.details-container .proverb:last-child {
+  border-bottom: none;
+}
+
+.details-container h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.details-container p {
+  font-size: 1.05rem;
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.details-container .meaning-title {
+  font-weight: bold;
+  margin-top: 0.8rem;
+  color: #0ea5e9;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #0c4a6e;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #08344d;
+}
+/* style.css - بخش مخصوص wall.html با تم هماهنگ صفحات قبلی */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #fefefe; /* پس‌زمینه روشن */
+    color: #222; /* متن تیره */
+    padding: 0;
+}
+
+/* Container */
+.wall-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Intro Section */
+.wall-intro h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0c4a6e; /* آبی تیره */
+    text-align: center;
+    font-weight: bold;
+}
+
+.wall-intro p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #334155; /* خاکستری آبی */
+}
+
+/* Proverb Form */
+.proverb-form {
+    background-color: #f8fafc; /* بسیار روشن */
+    border: 2px solid #0ea5e9; /* آبی */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(14, 165, 233, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.proverb-form label {
+    font-weight: bold;
+    color: #0c4a6e;
+}
+
+.proverb-form input[type="text"],
+.proverb-form textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    padding: 0.6rem;
+    border: 1.5px solid #0c4a6e;
+    border-radius: 5px;
+    resize: vertical;
+    
+}
+
+.proverb-form input[type="text"]:focus,
+.proverb-form textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 5px #38bdf8;
+}
+
+.proverb-form button {
+    background-color: #0c4a6e;
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 150px;
+}
+
+.proverb-form button:hover {
+    background-color: #38bdf8;
+    color: #0c4a6e;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    text-align: center;
+    padding: 1rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
